@@ -1,0 +1,65 @@
+
+.welcome-header{
+    height: 50px;
+}
+
+.center-text{
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+
+.data-pane{
+    height: 300px;
+    margin-top: 10px;
+}
+
+.data-pane-item{
+    height: 50%;
+}
+
+.pane-inner{
+    margin: 10px;
+    height: 80%;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+}
+
+.pane-center-text{
+    height: 120px;
+    text-align: center;
+    line-height: 120px;
+}
+
+
+.pane-right{
+    background: #F2F2F2;
+    height: 120px;
+    text-align: center;
+}
+
+.label{
+    padding-top: 0px;
+    font-size: 18px;
+}
+
+.count{
+    padding-top: 25px;
+    font-size: 35px;
+}
+
+
+.data-charts{
+    height: 650px;
+}
+
+.data-charts-chart{
+    height: 50%;
+}
+
+
+
+.charts{
+    padding: 10px;
+    height: 100%;
+}

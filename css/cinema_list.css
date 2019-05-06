@@ -1,0 +1,31 @@
+
+.search-header{
+    height: 100px;
+}
+
+.area-selection{
+    height: 100%;
+}
+
+.area-select-left{
+    height: 100%;
+    line-height: 100px;
+}
+
+/*
+.provice{
+    left:40px;
+}
+
+.city{
+    right: 20px;
+}
+
+.area{
+    right: 80px;
+}*/
+
+.data-table{
+    margin-top: 20px;
+    height: 500px;
+}

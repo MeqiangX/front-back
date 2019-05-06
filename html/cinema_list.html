@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制台</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/cinema_list.css">
+
+</head>
+<body>
+
+<!-- 头部分 可带数据搜索等 (省市区三级联动查询  影院名称查询 联合或单独查询) -->
+<div class="layui-row search-header">
+
+    <!-- 省市区三级联动 -->
+    <div class="layui-col-md12 area-selection">
+
+        <div class="layui-row">
+
+            <form class="layui-form" lay-filter="provice">
+
+                <div class="layui-col-md3">
+
+                    <div class="layui-inline provice" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 40px;">
+                        <label class="layui-form-label">省份：</label>
+                        <div class="layui-input-inline">
+                            <select lay-filter="provice-select" id="provice" name="provice" lay-verify="" lay-search>
+                                <option value="">请选择一个城市</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </form>
+
+            <form class="layui-form" lay-filter="city">
+
+            <div class="layui-col-md3">
+
+                    <div class="layui-inline city" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 70px;">
+                        <label class="layui-form-label">市区：</label>
+                        <div class="layui-input-inline">
+                            <select id="city" lay-filter="city-select" name="city" lay-verify="" lay-search>
+                                <option value="">请选择一个城市</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <form class="layui-form" lay-filter="area">
+
+            <div class="layui-col-md3" >
+                        <div class="layui-inline area" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 90px;">
+                            <label class="layui-form-label">县区：</label>
+                            <div class="layui-input-inline">
+                                <select  id="area" name="area"  lay-filter="area-select" lay-verify="" lay-search>
+                                    <option value="">请选择一个城市</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+                <div class="layui-col-md3">
+                    <div class="layui-inline provice" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 50px;">
+                        <input type="text" id="cinema-search-val" name="title" lay-verify="required" placeholder="影院名" autocomplete="off" class="layui-input" style="width: 180px;">
+                        <div class="layui-input-block" style="left: 100px;bottom: 38px">
+                            <button id="search-button" class="layui-btn layui-btn-radius" style="width: 100px;">搜索</button>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- 表格 影院 -->
+<div class="layui-row data-table">
+
+    <div class="layui-col-md12">
+        <table id="cinema-table" lay-filter="cinema-table"></table>
+    </div>
+
+
+</div>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a id="edit-button" class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a id="del-button" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script src="../layui/layui.js"></script>
+<script src="../js/common/common.js"></script>
+<script src="../js/modules/cinema_list.js"></script>
+</body>
+<script>
+    init();
+</script>
+</html>

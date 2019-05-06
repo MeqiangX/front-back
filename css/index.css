@@ -1,0 +1,13 @@
+
+
+.layui-tab-content{
+    height: 1050px;
+}
+
+.layui-tab-item{
+    height: 100%;
+}
+
+.layui-tab-title li:first-child > i {
+    display: none;
+}

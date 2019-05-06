@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>screen-edit</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+
+</head>
+<body>
+
+<!-- 放映厅查看表单 -->
+
+<!-- id (影藏) 影院名 地区 地址 联系方式 图片-->
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>放映厅信息</legend>
+</fieldset>
+
+<form class="layui-form" action="javascript:void(0)">
+    <div class="layui-form-item">
+        <input type="hidden" id="screen-id" value="">
+        <label class="layui-form-label">放映厅名</label>
+        <div class="layui-input-block">
+            <input id="screen-name" style="width: 400px;" type="text" name="title" required lay-verify="title" autocomplete="off" placeholder="放映厅名" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">行数</label>
+        <div class="layui-input-block">
+            <input id="screen-x" style="width: 400px;" type="text" name="username" required lay-verify="required" placeholder="行数" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">列数</label>
+        <div class="layui-input-block">
+            <input id="screen-y" style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="列数" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item" style="margin-left: 150px;">
+        <button id="submit" class="layui-btn" onclick="formSubmit()" lay-filter="demo2" style="top: 100px">提交</button>
+        <button id="cancel" onclick="closeiframe()" class="layui-btn">取消</button>
+    </div>
+
+</form>
+
+
+
+
+<script src="../layui/layui.js"></script>
+<script src="../js/modules/screen_edit.js"></script>
+</body>
+
+<script>
+init();
+</script>
+</html>

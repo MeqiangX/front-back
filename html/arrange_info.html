@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrange-info</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+
+</head>
+<body>
+
+<!-- order  查看表单 -->
+
+<!-- id (影藏) 影院名 地区 地址 联系方式 图片-->
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>订单信息</legend>
+</fieldset>
+
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">影院</label>
+        <div class="layui-input-block">
+            <input id="cinema-name" style="width: 400px;" type="text" name="title" required lay-verify="title" autocomplete="off" placeholder="订单号" class="layui-input" disabled>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">放映厅</label>
+        <div class="layui-input-block">
+            <input id="screen-name" style="width: 400px;" type="text" name="username" required lay-verify="required" placeholder="用户id" autocomplete="off" class="layui-input" disabled>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">放映电影</label>
+        <div class="layui-input-block">
+            <input id="movie-name" disabled style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">日期</label>
+        <div class="layui-input-block">
+            <input id="date" disabled style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">开始时间</label>
+        <div class="layui-input-block">
+            <input id="start-time" disabled style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">票价</label>
+        <div class="layui-input-block">
+            <input id="price" disabled style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">语言</label>
+        <div class="layui-input-block">
+            <input id="language" disabled style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建时间</label>
+        <div class="layui-input-block">
+            <input id="create-time" disabled style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">修改时间</label>
+        <div class="layui-input-block">
+            <input id="update-time" disabled style="width: 400px;" type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+</form>
+
+
+
+
+<script src="../layui/layui.js"></script>
+<script src="../js/modules/arrange_info.js"></script>
+</body>
+
+<script>
+init();
+</script>
+</html>

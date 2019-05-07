@@ -20,14 +20,14 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    贤心
+                    <label id="admin-name">贤心</label>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="javascript:void(0)">基本资料</a></dd>
+                    <dd><a href="javascript:void(0)">安全设置</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">登出</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0)" onclick="logout()">登出</a></li>
         </ul>
     </div>
 
@@ -72,29 +72,29 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">用户</a></dd>
-                        <dd><a href="javascript:;">添加用户</a></dd>
+                        <dd><a href="javascript:;" lay-id="15">用户</a></dd>
+                        <dd><a href="javascript:;" lay-id="16">添加用户</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">订单管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">订单</a></dd>
-                        <dd><a href="javascript:;"></a></dd>
+                        <dd><a href="javascript:;" lay-id="17">订单</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">管理员管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">管理员</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
+                        <dd><a href="javascript:;" lay-id="18">管理员</a></dd>
+                        <dd><a href="javascript:;" lay-id="19">添加管理员</a></dd>
+                        <dd><a href="javascript:;" lay-id="20">个人信息</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">控制台</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">控制台</a></dd>
-                        <dd><a href="javascript:;">定时任务</a></dd>
+                        <dd><a href="javascript:;" lay-id="0">控制台</a></dd>
+                        <dd><a href="javascript:;" lay-id="21">定时任务</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -108,7 +108,7 @@
             <div class="layui-tab" lay-allowClose="true" lay-filter="tab-nav">
                 <ul class="layui-tab-title">
                     <li class="layui-this" lay-id="0">控制台</li>
-                    <li lay-id="1">影院</li>
+                    <!--<li lay-id="1">影院</li>
                     <li lay-id="2">放映厅配置</li>
                     <li lay-id="3">添加影院</li>
                     <li lay-id="4">放映厅</li>
@@ -121,48 +121,59 @@
                     <li lay-id="11">北美票房榜</li>
                     <li lay-id="12">本周口碑榜</li>
                     <li lay-id="13">即将上映榜</li>
-                    <li lay-id="14">Top100</li>
+                    <li lay-id="14">Top100</li>-->
                 </ul>
                 <div class="layui-tab-content">
+
+                    <!-- 控制台 -->
                     <div class="layui-tab-item layui-show">
-
                         <iframe src="welcome.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-
                     </div>
 
+                    <!-- 影院列表
                     <div class="layui-tab-item">
-
                         <iframe src="cinema_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-
                     </div>
+
+                    &lt;!&ndash;影院配置 &ndash;&gt;
                     <div class="layui-tab-item">
 
                         <iframe src="cinema_screen_config.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
 
                     </div>
 
+                    &lt;!&ndash; 添加影院 &ndash;&gt;
                     <div class="layui-tab-item">
                         <iframe src="cinema_edit.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
 
+                    &lt;!&ndash; 放映厅列表 &ndash;&gt;
                     <div class="layui-tab-item">
                         <iframe src="screen_hall_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
 
+                    &lt;!&ndash; 添加放映厅 &ndash;&gt;
                     <div class="layui-tab-item">
                         <iframe src="screen_edit.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
-                    <div class="layui-tab-item">内容5</div>
-                    <div class="layui-tab-item">内容5</div>
+
+                    &lt;!&ndash; 排片 &ndash;&gt;
+                    <div class="layui-tab-item">
+                        排片列表
+                    </div>
+                    <div class="layui-tab-item">
+                        新增排片
+                    </div>
 
                     <div class="layui-tab-item">
                         <iframe src="movie_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
 
-                    <!-- 6个榜单 -->
+                    &lt;!&ndash; 6个榜单 &ndash;&gt;
                     <div class="layui-tab-item">
                         <iframe src="hot_movie_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
+
                     <div class="layui-tab-item">
                         <iframe src="new_movie_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
@@ -178,6 +189,40 @@
                     <div class="layui-tab-item">
                         <iframe src="top100_movie_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
+
+
+                    &lt;!&ndash; 用户 &ndash;&gt;
+                    <div class="layui-tab-item">
+                        <iframe src="user_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                    </div>
+
+                    <div class="layui-tab-item">
+                        添加用户
+                    </div>
+
+
+                    &lt;!&ndash; 订单 &ndash;&gt;
+                    <div class="layui-tab-item">
+                        订单
+                    </div>
+
+                    &lt;!&ndash; 管理员 &ndash;&gt;
+                    <div class="layui-tab-item">
+                        <iframe src="user_admin_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="layui-tab-item">
+                        添加管理员
+                    </div>
+
+                    &lt;!&ndash; 控制台 &ndash;&gt;
+
+                    <div class="layui-tab-item">
+                        控制台
+                    </div>
+
+                    <div class="layui-tab-item">
+                        定时任务记录
+                    </div>-->
                 </div>
             </div>
 

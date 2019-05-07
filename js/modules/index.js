@@ -4,7 +4,9 @@ var $;
 layui.use(['jquery','element'], function(){
     element = layui.element;
     $ = layui.jquery;
-    
+
+    putName(); //填充个人信息
+
     // 左侧导航的监听事件
     element.on('nav(nav-left)',function (elem) {
      /*   console
@@ -13,7 +15,7 @@ layui.use(['jquery','element'], function(){
 */
         var layId = $(elem).attr("lay-id");
 
-        console.log(layId);
+        console.log("layId = "+layId);
         // 找到lay-id = lay-id 的 tab  --->  没有则创建   有则addClass
         // 一级菜单不弹出tab
         if (layId != undefined){
@@ -21,11 +23,15 @@ layui.use(['jquery','element'], function(){
             if (layId == 1){
                 str = "<iframe src=\"cinema_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 2){
-                str = "放映厅配置";
+                str = " <iframe src=\"cinema_screen_config.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 3){
                 str = "<iframe src=\"cinema_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 4){
                 str = "<iframe src=\"screen_hall_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 5){
+                str = "<iframe src=\"screen_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 6){
+                str = "<iframe src=\"arrange_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 8){
                 str = "<iframe src=\"movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 9){
@@ -40,6 +46,18 @@ layui.use(['jquery','element'], function(){
                 str = "<iframe src=\"comming_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 14){
                 str = "<iframe src=\"top100_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 15){
+                str = "<iframe src=\"user_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 16){
+                str = "<iframe src=\"user_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 17){
+                str = "<iframe src=\"order_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 18){
+                str = "<iframe src=\"user_admin_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 19){
+                str = "<iframe src=\"user_admin_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 20){
+                str = "<iframe src=\"self_info.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }
 
             navToTab($(elem).attr("lay-id"),$(elem).text(),str);
@@ -82,5 +100,42 @@ function navToTab(layId,title,content) {
         // 切换
         element.tabChange('tab-nav',layId);
 
+
+}
+
+// 登出
+function logout() {
+
+    // 清空 data.user
+    var userDataTable = layui.data('user');
+
+    console.log(userDataTable.admin); // 获得当前管理员信息
+
+    // 清除
+    //【删】：删除test表的nickname字段
+    layui.data('user', {
+        key: 'admin'
+        ,remove: true
+    });
+    // 再次查看是否清除
+   /* var userDataTable = layui.data('user');
+
+    console.log("清除后："+userDataTable.admin); // 获得当前管理员信息*/
+    // 返回到登录页面
+    window.location.href="login.html";
+
+}
+
+// 填充管理员名称
+function putName() {
+
+    var adminDataTable = layui.data("user");
+
+    if (adminDataTable == undefined || adminDataTable == null){
+        // 未登录 跳转登录
+        window.location.href = "login.html";
+    }
+    
+    $("#admin-name").text(adminDataTable.admin.userName);
 
 }

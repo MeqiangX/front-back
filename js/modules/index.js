@@ -9,10 +9,11 @@ layui.use(['jquery','element'], function(){
 
     // 左侧导航的监听事件
     element.on('nav(nav-left)',function (elem) {
-     /*   console
+       /* console
             .log($(elem));
-        console.log($(elem).attr("lay-id")); // 拿到当前点击的导航id 去tab 中找到对应的tab 显示  如果已经存在 则选中 没有则添加
-*/
+
+        console.log($(elem).attr("lay-id"));*/ // 拿到当前点击的导航id 去tab 中找到对应的tab 显示  如果已经存在 则选中 没有则添加
+
         var layId = $(elem).attr("lay-id");
 
         console.log("layId = "+layId);
@@ -32,6 +33,8 @@ layui.use(['jquery','element'], function(){
                 str = "<iframe src=\"screen_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 6){
                 str = "<iframe src=\"arrange_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 7){
+                str = "<iframe src=\"arrange_add.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 8){
                 str = "<iframe src=\"movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 9){

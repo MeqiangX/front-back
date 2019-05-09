@@ -12,38 +12,64 @@
 <!-- 头部分 可带数据搜索等 ( -->
 <div class="layui-row search-header">
 
-    <!-- 搜索框 -->
     <div class="layui-col-md12 area-selection">
 
         <div class="layui-row">
+            <form class="layui-form" action="javascript:void(0)">
+                <div class="layui-col-md3">
 
-            <!-- 时间 -->
-            <!-- 影院 -->
-            <!-- 电影 -->
+                    <div class="layui-inline provice" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 10px;">
+                        <label class="layui-form-label">日期：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" class="layui-input" id="datetools">
+                        </div>
+                    </div>
 
-            <!-- 列表信息 -->
-            <!-- id  联合id 隐藏  影院名 放映厅 电影名  -->
-
-            <!-- 如果跟新 放映厅 要检查是否已经出售了票 如果已经出售了 则不予更改  -->
+                </div>
 
 
+                <div class="layui-col-md3" >
+                    <div class="layui-inline area" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 50px;">
+                        <label class="layui-form-label">影院：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="cinema-search-val" name="title" lay-verify="required" placeholder="影院" autocomplete="off" class="layui-input" style="width: 180px;">
+                        </div>
+                    </div>
+                </div>
 
-            <div class="layui-col-md5" style="top: 20px">
-                <div class="layui-inline">
-                    <input type="text" id="time-search-val" name="title" lay-verify="required" placeholder="时间" autocomplete="off" class="layui-input" style="width: 180px">
-                    <input type="text" id="cinema-search-val" name="title" lay-verify="required" placeholder="影院" autocomplete="off" class="layui-input" style="width: 180px">
-                    <input type="text" id="movie-search-val" name="title" lay-verify="required" placeholder="电影" autocomplete="off" class="layui-input" style="width: 180px">
-                    <div class="layui-input-block" style="left: 100px;bottom: 38px">
+            <div class="layui-col-md3">
+                <div class="layui-inline provice" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 90px;">
+                    <label class="layui-form-label">电影：</label>
+                    <input type="text" id="movie-search-val" name="title" lay-verify="required" placeholder="电影" autocomplete="off" class="layui-input" style="width: 180px;">
+                    <div class="layui-input-block" style="left: 230px;bottom: 38px">
                         <button id="search-button" class="layui-btn layui-btn-radius" style="width: 100px;">搜索</button>
                     </div>
                 </div>
             </div>
 
+            </form>
         </div>
 
 
     </div>
+    <!-- 搜索框 -->
+   <!-- <div class="layui-col-md12 area-selection">
 
+        <div class="layui-row">
+
+            &lt;!&ndash; 时间 &ndash;&gt;
+            &lt;!&ndash; 影院 &ndash;&gt;
+            &lt;!&ndash; 电影 &ndash;&gt;
+
+            &lt;!&ndash; 列表信息 &ndash;&gt;
+            &lt;!&ndash; id  联合id 隐藏  影院名 放映厅 电影名  &ndash;&gt;
+
+            &lt;!&ndash; 如果跟新 放映厅 要检查是否已经出售了票 如果已经出售了 则不予更改  &ndash;&gt;
+        </div>
+
+
+    </div>
+-->
 </div>
 
 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排片</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/cinema_list.css">
+
+</head>
+<body>
+
+<!-- 头部分 可带数据搜索等 (省市区三级联动查询  影院名称查询 联合或单独查询) -->
+
+<!-- 影院区域  省市区影院放映厅五级联动 -->
+
+<!-- 电影区域  搜索电影 勾选  -->
+
+<!-- 日期选择 -->
+
+<!-- 开始时间 时间选择(只选择 datetime 日期从这儿截取) -->
+
+<!-- 语言选择 下拉框 从电影那儿取得 -->
+
+<!-- 票价 -->
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>排片</legend>
+</fieldset>
+
+<form class="layui-form" action="javascript:void(0)">
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">区域：</label>
+            <div class="layui-input-inline layui-form" lay-filter="province">
+                <select  id="province" lay-filter="province-select" name="city" lay-verify="" lay-search>
+                    <option value="">请选择一个城市</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="layui-inline">
+            <div class="layui-input-inline layui-form" lay-filter="city">
+                <select id="city" lay-filter="city-select" name="city" lay-verify="" lay-search>
+
+                </select>
+            </div>
+        </div>
+
+
+        <div class="layui-inline">
+            <div class="layui-input-inline layui-form" lay-filter="area">
+                <select id="area" lay-filter="area-select" name="area" lay-verify="" lay-search>
+
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">影院：</label>
+            <div class="layui-input-inline layui-form" lay-filter="cinema">
+                <select  id="cinema" lay-filter="cinema-select" name="cinema" lay-verify="" lay-search>
+
+                </select>
+            </div>
+        </div>
+
+
+        <div class="layui-inline">
+            <label class="layui-form-label">放映厅：</label>
+            <div class="layui-input-inline layui-form" lay-filter="screen">
+                <select id="screen" lay-filter="screen-select" name="screen" lay-verify="" lay-search>
+
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-row">
+
+            <div class="layui-col-md5 layui-col-sm-offset9" style="top: 20px">
+                <div class="layui-inline">
+                    <input type="text" id="cinema-search-val" name="title" lay-verify="required" placeholder="电影名" autocomplete="off" class="layui-input" style="width: 180px">
+                    <div class="layui-input-block" style="left: 100px;bottom: 38px">
+                        <button id="search-button" class="layui-btn layui-btn-radius" style="width: 100px;">搜索</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <!-- 表格 电影 -->
+        <div class="layui-row data-table">
+
+            <div class="layui-col-md12">
+                <table id="movie-table" lay-filter="movie-table"></table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">日期：</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="datetools">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">语言：</label>
+            <div class="layui-input-inline layui-form" lay-filter="language">
+                <select  id="language" lay-filter="language-select" name="language" lay-verify="" lay-search>
+
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">价格：</label>
+        <div class="layui-input-block">
+            <input id="price" style="width: 400px;" type="text" name="title" required lay-verify="price" autocomplete="off" placeholder="价格" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item" style="margin-left: 150px;">
+        <button id="submit" class="layui-btn" onclick="formSubmit()" lay-filter="demo2" style="top: 100px">提交</button>
+        <button id="cancel" onclick="close()" class="layui-btn">取消</button>
+    </div>
+
+</form>
+
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+</script>
+
+<script src="../layui/layui.js"></script>
+<script src="../js/common/common.js"></script>
+<script src="../js/modules/arrange_add.js"></script>
+</body>
+<script>
+    init();
+</script>
+</html>

@@ -70,8 +70,52 @@ function areaData(fatherId) {
 }
 
 
+// 区域下的影院信息
+function cinemaData(areaId) {
+
+// 根据选择的areaId 来加载 下面的 影院
+    var cinema;
+    $.ajax({
+        type:"get",
+        async:false,
+        url:"http://localhost:8080/api/backend/cinema/find-all-cinema-areaId",
+        data:{
+            areaId:areaId
+        },
+        success:function (data,status) {
+            cinema = data.data;
+        }
+    });
+
+    return cinema;
+
+}
+
+
+// 影院下的放映厅信息
+function screenData(cinemaId) {
+
+// 根据选择的areaId 来加载 下面的 影院
+    var screen;
+    $.ajax({
+        type:"get",
+        async:false,
+        url:"http://localhost:8080/api/backend/screen/query-screens-by-cinemaId",
+        data:{
+            cinemaId:cinemaId
+        },
+        success:function (data,status) {
+            screen = data.data;
+        }
+    });
+
+    return screen;
+
+}
+
 // 填充select
 function putSelectData(option,selector,data) {
+
 
         $("#"+selector).empty();
 
@@ -89,10 +133,28 @@ function putSelectData(option,selector,data) {
                 str = str + "<option value=\""+ data[i].cityId +"\">"+ data[i].city +"</option>\n";
 
             }
-        }else {
+        }else if (option == 'area'){
             for (var i = 0;i < data.length;++i){
 
                 str = str + "<option value=\""+ data[i].areaId +"\">"+ data[i].area +"</option>\n";
+
+            }
+        }else if (option == 'cinema'){
+            for (var i = 0;i < data.length;++i){
+
+                str = str + "<option value=\""+ data[i].id +"\">"+ data[i].cinemaName +"</option>\n";
+
+            }
+        }else if (option == 'screen'){
+            for (var i = 0;i < data.length;++i){
+
+                str = str + "<option value=\""+ data[i].id +"\">"+ data[i].screeningHallName +"</option>\n";
+
+            }
+        }else{ // language
+            for (var i = 0;i < data.length;++i){
+
+                str = str + "<option value=\""+ data[i].key +"\">"+ data[i].value +"</option>\n";
 
             }
         }

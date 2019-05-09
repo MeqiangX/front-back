@@ -1,5 +1,6 @@
 
 
+
 //  排片列表 js
 
 var table;
@@ -7,7 +8,8 @@ var form;
 var layer;
 var $;
 var tableObj;
-
+var laydate;
+var arrangeDate;
 
 var options = {
     elem: '#arrange-table'
@@ -50,12 +52,37 @@ var options = {
 
 function init(){
 
-    layui.use(['jquery','table','form'],function () {
+    layui.use(['jquery','table','form','laydate'],function () {
         table = layui.table;
         form = layui.form;
+        laydate = layui.laydate;
         $ = layui.$ //重点处
         //第一个实例
         // 搜索按钮绑定事件
+
+        $("#search-button").on('click',function () {
+            search($("#cinema-search-val").val(),$("#movie-search-val").val());
+        });
+
+        //执行一个laydate实例   初始化日期组件
+        laydate.render({
+            elem: '#datetools' //指定元素
+            ,type: 'date'
+            ,range:'T'// 默认不选日期 范围为空
+            //,value: new Date()
+            ,theme:'molv'
+            ,done: function (value,date,endDate) {
+
+                // 每次选值  都赋予
+                arrangeDate = value;
+                console.log(arrangeDate);
+
+                console.log(value); //得到日期生成的值，如：2017-08-18
+                console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+                console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+            }
+        });
+
         // 初始化表格
         tableObj = table.render(options);
 
@@ -74,18 +101,16 @@ function init(){
             } else if(obj.event === 'del'){
 
                 // 删除操作
-                layer.confirm('真的删除行么', function(index){
-
-
+                layer.confirm('真的删除该排片记录么，请确保当前排片记录未出售', function(index){
 
                     // 需要执行的请求
                     var result;
                     $.ajax({
                         type:"get",
                         async:false,
-                        url:"http://localhost:8080/api/backend/cinema/del-by-id",
+                        url:"http://localhost:8080/api/backend/cinema/delete-arrange-record",
                         data:{
-                            cinemaId:data.id
+                            arrangeId:data.id
                         },
                         success:function (data,status) {
                             if (data.success == true){
@@ -101,7 +126,7 @@ function init(){
                         layer.close(index);
                         layer.msg("删除成功");
                         // 刷新表格
-                        search($("#area").val(),$("#cinema-search-val").val());
+                        search($("#cinema-search-val").val(),$("#movie-search-val").val());
                     }else{
                         // 删除失败
                         layer.msg(result);
@@ -109,16 +134,20 @@ function init(){
                 });
             } else if(obj.event === 'edit'){
                 // 编辑操作
-                layer.open({
+                var editiframe = layer.open({
                     type: 2,
                     area: ['900px', '500px'],
-                    content: 'cinema_edit.html?id='+data.id, //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                    content: 'arrange_edit.html?id='+data.id, //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                    maxmin: true, // 全屏
                     end:function () {
                         // 关闭之后 的代码
                         // 重载表格
-                        search($("#area").val(),$("#cinema-search-val").val());
+                        search($("#cinema-search-val").val(),$("#movie-search-val").val());
                     }
                 });
+
+                // 全屏打开
+                layer.full(editiframe);
                 /*layer.alert('编辑行：<br>'+ JSON.stringify(data))*/
             }
         });
@@ -130,19 +159,55 @@ function init(){
 
 
 
-// 搜索
-function search(areaId,search) {
+// 搜索 日期 影院 电影
+function search(cinemaName,movieName) {
+
+    // 搜索 点击  查看日期
+
+    console.log(" 日期 ： "+ arrangeDate + " --  影院名：" + cinemaName + "-== 电影名：" + movieName);
 
     tableObj.reload({
         where:{
-            areaId:areaId,
-            search:search
+            arrangeDate:arrangeDate == undefined ? null : arrangeDate,
+            cinemaName:cinemaName == undefined ? null : cinemaName,
+            movieName:movieName == undefined ? null : movieName
         },
         page:{
             curr:1
         }
     });
 
+}
+
+
+// 获得当前日期 - - 分割
+function currDate() {
+    // 获取当前日期
+    var date = new Date();
+
+// 获取当前月份
+    var nowMonth = date.getMonth() + 1;
+
+// 获取当前是几号
+    var strDate = date.getDate();
+
+// 添加分隔符“-”
+    var seperator = "-";
+
+// 对月份进行处理，1-9月在前面添加一个“0”
+    if (nowMonth >= 1 && nowMonth <= 9) {
+        nowMonth = "0" + nowMonth;
+    }
+
+// 对月份进行处理，1-9号在前面添加一个“0”
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+
+// 最后拼接字符串，得到一个格式为(yyyy-MM-dd)的日期
+    var nowDate = date.getFullYear() + seperator + nowMonth + seperator + strDate;
+
+    return nowDate;
 }
 
 

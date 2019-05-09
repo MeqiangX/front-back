@@ -11,7 +11,89 @@
 
 <!-- 影院表格 -->
 <div class="layui-row cinema-list">
-        <iframe src="cinema_list.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+
+    <!-- 头部分 可带数据搜索等 (省市区三级联动查询  影院名称查询 联合或单独查询) -->
+    <div class="layui-row search-header">
+
+        <!-- 省市区三级联动 -->
+        <div class="layui-col-md12 area-selection">
+
+            <div class="layui-row">
+
+                <form class="layui-form" lay-filter="provice">
+
+                    <div class="layui-col-md3">
+
+                        <div class="layui-inline provice" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 40px;">
+                            <label class="layui-form-label">省份：</label>
+                            <div class="layui-input-inline">
+                                <select lay-filter="provice-select" id="provice" name="provice" lay-verify="" lay-search>
+                                    <option value="">请选择一个城市</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </form>
+
+                <form class="layui-form" lay-filter="city">
+
+                    <div class="layui-col-md3">
+
+                        <div class="layui-inline city" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 70px;">
+                            <label class="layui-form-label">市区：</label>
+                            <div class="layui-input-inline">
+                                <select id="city" lay-filter="city-select" name="city" lay-verify="" lay-search>
+                                    <option value="">请选择一个城市</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <form class="layui-form" lay-filter="area">
+
+                    <div class="layui-col-md3" >
+                        <div class="layui-inline area" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 90px;">
+                            <label class="layui-form-label">县区：</label>
+                            <div class="layui-input-inline">
+                                <select  id="area" name="area"  lay-filter="area-select" lay-verify="" lay-search>
+                                    <option value="">请选择一个城市</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-col-md3">
+                    <div class="layui-inline provice" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 50px;">
+                        <input type="text" id="cinema-search-val" name="title" lay-verify="required" placeholder="影院名" autocomplete="off" class="layui-input" style="width: 180px;">
+                        <div class="layui-input-block" style="left: 100px;bottom: 38px">
+                            <button id="search-button" class="layui-btn layui-btn-radius" style="width: 100px;">搜索</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- 表格 影院 -->
+    <div class="layui-row data-table">
+
+        <div class="layui-col-md12">
+            <table id="cinema-table" lay-filter="cinema-table"></table>
+        </div>
+
+
+    </div>
 </div>
 
 
@@ -38,46 +120,34 @@
 
 <!--2个表格 -->
 <div class="layui-row data-row">
-        <div id="root"></div>
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md5">
+            <table class="layui-hide" id="left_tab" lay-filter="left"></table>
+        </div>
+        <div class="layui-col-md2 btn-height">
+            <div style="margin-bottom: 10px;">
+                <button class="layui-btn  layui-btn-disabled left-btn">
+                    <i class="layui-icon">&#xe602;</i>
+                </button>
+            </div>
+            <div >
+                <button class="layui-btn layui-btn-disabled right-btn">
+                    <i class="layui-icon">&#xe603;</i>
+                </button>
+            </div>
+        </div>
+        <div class="layui-col-md5">
+            <table class="layui-hide" id="right_tab" lay-filter="right"></table>
+        </div>
+    </div>
 </div>
 
 </body>
 <script src="../layui/layui.js"></script>
+<script src="../js/common/common.js"></script>
 <script src="../js/modules/cinema_screen_config.js"></script>
+<script src="../js/modules/cinema_config.js"></script>
 <script>
-    layui.config({
-        base: '../js/layui_exts/transfer/'
-    }).use(['transfer'],function () {
-        var transfer = layui.transfer,$ = layui.$;
-        //数据源  异步加载数据源
-        var data1 = [{'id':'10001','name':'杜甫','sex':'男'},{'id':'10002','name':'李白','sex':'男'},{'id':'10003','name':'王勃','sex':'男'},{'id':'10004','name':'李清照','sex':'男'},{'id':'10004','name':'李清照','sex':'男'},{'id':'10004','name':'李清照','sex':'男'},{'id':'10004','name':'李清照','sex':'男'}];
-        var data2 = [{'id':'10005','name':'白居易','sex':'男'}];
-        //表格列
-        var cols = [{type: 'checkbox', fixed: 'left'},{field: 'id', title: 'ID', width: 80, sort: true},{field: 'name', title: '用户名'},{field: 'sex', title: '性别'}]
-        //表格配置文件
-        var tabConfig = {'page':true,'limits':[10,50,100],'height':300}
-
-        var tb1 = transfer.render({
-            elem: "#root", //指定元素
-            cols: cols, //表格列  支持layui数据表格所有配置
-            data: [data1,data2], //[左表数据,右表数据[非必填]]
-            tabConfig: tabConfig //表格配置项 支持layui数据表格所有配置
-        });
-
-
-        //transfer.get(参数1:初始化返回值,参数2:获取数据[all,left,right,l,r],参数:指定数据字段)
-        $('.all').on('click',function () {
-            var data = transfer.get(tb1,'all');
-            layer.msg(JSON.stringify(data))
-        });
-        $('.left').on('click',function () {
-            var data = transfer.get(tb1,'left','id');
-            layer.msg(JSON.stringify(data))
-        });
-        $('.right').on('click',function () {
-            var data = transfer.get(tb1,'r');
-            layer.msg(JSON.stringify(data))
-        });
-    });
+    init();
 </script>
 </html>

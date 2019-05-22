@@ -102,10 +102,11 @@ function init(){
 
         tableObj = table.render(options);
 
-       // 搜索事件
+        // 搜索事件
         $("#search-button").on('click',function () {
-            search();
+            search($("#movie-search-val").val());
         });
+
 
 
         //执行一个laydate实例   初始化日期组件
@@ -185,7 +186,20 @@ function init(){
     });
 }
 
+// 搜索
+function search(search) {
 
+    //表格重载
+    tableObj.reload({
+        where:{
+            search:search
+        },
+        page:{
+            curr:1
+        }
+    });
+
+}
 
 
 // 提交

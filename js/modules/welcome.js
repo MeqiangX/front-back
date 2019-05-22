@@ -15,6 +15,17 @@ layui.use(['layer','jquery'],function () {
 
 // 初始化界面
 function init() {
+
+    // 填充时间 管理员名称
+
+    // 时间
+    timeclock("clock");
+
+    // 名称
+    var adminDataTable = layui.data('user');
+    $(".admin-name").text(adminDataTable.admin.userName);
+
+
     var paneDataList = paneData();
 
     console.log(paneDataList);

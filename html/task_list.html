@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排片列表</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/movie_list.css">
+
+</head>
+<body>
+
+<!-- 头部分 可带数据搜索等 ( -->
+<div class="layui-row search-header">
+
+    <div class="layui-col-md12 area-selection">
+
+        <div class="layui-row">
+            <form class="layui-form" action="javascript:void(0)">
+                <div class="layui-col-md3">
+
+                    <div class="layui-inline provice" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 10px;">
+                        <label class="layui-form-label">日期：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" class="layui-input" id="datetools">
+                        </div>
+                    </div>
+
+                </div>
+
+
+<!--
+                <div class="layui-col-md3" >
+                    <div class="layui-inline area" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 50px;">
+                        <label class="layui-form-label">任务类型：</label>
+                        <div class="layui-input-inline">
+                            <select lay-filter="provice-select" id="provice" name="provice" lay-verify="" lay-search>
+                                <option value="">请选择一种任务</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+-->
+
+            <div class="layui-col-md3">
+                <div class="layui-inline task" style="width: 330px;padding: 0;margin: 0;top: 25px;right: 10px;">
+                    <label class="layui-form-label">任务类型：</label>
+                    <div class="layui-input-inline layui-form" lay-filter="task">
+                        <select lay-filter="task-select" id="task" name="task" lay-verify="" lay-search>
+                            <option value="">请选择一种任务</option>
+                        </select>
+                    </div>
+                    <div class="layui-input-block" style="left: 230px;bottom: 38px">
+                        <button id="search-button" class="layui-btn layui-btn-radius" style="width: 100px;">搜索</button>
+                    </div>
+                </div>
+            </div>
+
+            </form>
+        </div>
+
+
+    </div>
+    <!-- 搜索框 -->
+   <!-- <div class="layui-col-md12 area-selection">
+
+        <div class="layui-row">
+
+            &lt;!&ndash; 时间 &ndash;&gt;
+            &lt;!&ndash; 影院 &ndash;&gt;
+            &lt;!&ndash; 电影 &ndash;&gt;
+
+            &lt;!&ndash; 列表信息 &ndash;&gt;
+            &lt;!&ndash; id  联合id 隐藏  影院名 放映厅 电影名  &ndash;&gt;
+
+            &lt;!&ndash; 如果跟新 放映厅 要检查是否已经出售了票 如果已经出售了 则不予更改  &ndash;&gt;
+        </div>
+
+
+    </div>
+-->
+</div>
+
+
+<!-- 表格 电影 -->
+<div class="layui-row data-table">
+
+    <div class="layui-col-md12">
+        <table id="task-table" lay-filter="task-table"></table>
+    </div>
+
+
+</div>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a id="del-button" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script src="../layui/layui.js"></script>
+<script src="../js/common/common.js"></script>
+<script src="../js/modules/task_list.js"></script>
+</body>
+<script>
+    init();
+</script>
+</html>

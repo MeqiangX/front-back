@@ -49,7 +49,7 @@ var options = {
 function init(){
     layui.use('table', function(){
         var table = layui.table,$ = layui.$;
-        var height = 490; //固定表格高度
+        var height = 360; //固定表格高度
         //计算按钮的高度
         var btn_height = height /2 -44;
         $('.btn-height').css('padding-top',btn_height).css('text-align','center')

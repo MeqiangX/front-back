@@ -1,10 +1,11 @@
 var element;
 var $;
+var layer;
 //JavaScript代码区域
-layui.use(['jquery','element'], function(){
+layui.use(['jquery','element','layer'], function(){
     element = layui.element;
     $ = layui.jquery;
-
+    layer = layui.layer;
     putName(); //填充个人信息
 
     // 左侧导航的监听事件
@@ -61,6 +62,8 @@ layui.use(['jquery','element'], function(){
                 str = "<iframe src=\"user_admin_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 20){
                 str = "<iframe src=\"self_info.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 21){
+                str = "<iframe src=\"task_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }
 
             navToTab($(elem).attr("lay-id"),$(elem).text(),str);
@@ -134,9 +137,12 @@ function putName() {
 
     var adminDataTable = layui.data("user");
 
-    if (adminDataTable == undefined || adminDataTable == null){
+    if (adminDataTable.admin == undefined || adminDataTable.admin == null){
         // 未登录 跳转登录
-        window.location.href = "login.html";
+        layer.msg('未登录，请先登录',{icon:0},function () {
+            window.location.href = "login.html";
+        });
+
     }
     
     $("#admin-name").text(adminDataTable.admin.userName);

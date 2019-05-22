@@ -151,6 +151,13 @@ function putSelectData(option,selector,data) {
                 str = str + "<option value=\""+ data[i].id +"\">"+ data[i].screeningHallName +"</option>\n";
 
             }
+        }else if (option == 'task'){ // 任务
+            str = str + "<option value=\"\">请选择一种任务</option>\n";
+            for (var i = 0;i < data.length;++i){
+
+                str = str + "<option value=\""+ data[i].typeId +"\">"+ data[i].taskName +"</option>\n";
+
+            }
         }else{ // language
             for (var i = 0;i < data.length;++i){
 

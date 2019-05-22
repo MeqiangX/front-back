@@ -27,10 +27,6 @@ var options = {
             "data":res.data.records
         }
     }
-    /*,where:{
-        areaId:'',
-        search:''
-    }*/
     ,page: true //开启分页
     ,cols: [[ //表头
         {field: 'movieId', title: 'movieId',width:100,sort: true,align:'center'}
@@ -60,13 +56,9 @@ function init(){
         // 初始化表格
         tableObj = table.render(options);
 
-       // 搜索事件
-        $("#search-button").on('click',function () {
-            search();
-        });
 
         //监听工具条  电影列表 应该只有查看的功能
-        table.on('tool(cinema-table)', function(obj){
+        table.on('tool(movie-table)', function(obj){
             var data = obj.data;
             if(obj.event === 'detail'){
 
@@ -74,7 +66,7 @@ function init(){
                 layer.open({
                     type: 2,
                     area: ['900px', '500px'],
-                    content: 'cinema_info.html?id='+data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                    content: 'movie_info.html?id='+data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
                 });
                 layer.msg('ID：'+ data.id + ' 的查看操作');
             }
@@ -82,18 +74,21 @@ function init(){
         /*var checkStatus = table.checkStatus('idTest')
             ,data = checkStatus.data;*/  //  获得当前选中的行记录
 
+        // 搜索事件
+        $("#search-button").on('click',function () {
+            search($("#movie-search-val").val());
+        });
     });
 }
 
 
 
 // 搜索
-function search() {
+function search(search) {
 
     //表格重载
     tableObj.reload({
         where:{
-            areaId:areaId,
             search:search
         },
         page:{

@@ -29,10 +29,9 @@ var options = {
             "data":res.data.records
         }
     }
-    /*,where:{
-        areaId:'',
-        search:''
-    }*/
+    ,where:{
+        search:document.getElementById("movie-search-val").value
+    }
     ,page: true //开启分页
     ,cols: [[ //表头
         {type: 'radio', title: '选择'}
@@ -51,8 +50,28 @@ var options = {
     ]]
 };
 
-function init(){
 
+Date.prototype.format = function(fmt) {
+    var o = {
+        "M+" : this.getMonth()+1,                 //月份
+        "d+" : this.getDate(),                    //日
+        "h+" : this.getHours(),                   //小时
+        "m+" : this.getMinutes(),                 //分
+        "s+" : this.getSeconds(),                 //秒
+        "q+" : Math.floor((this.getMonth()+3)/3), //季度
+        "S"  : this.getMilliseconds()             //毫秒
+    };
+    if(/(y+)/.test(fmt)) {
+        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    }
+    for(var k in o) {
+        if(new RegExp("("+ k +")").test(fmt)){
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        }
+    }
+    return fmt;
+}
+function init(){
     layui.use(['jquery','table','form','laydate'],function () {
         table = layui.table;
         form = layui.form;
@@ -63,17 +82,13 @@ function init(){
         // 初始化表格
         tableObj = table.render(options);
 
-       // 搜索事件
-        $("#search-button").on('click',function () {
-            search();
-        });
-
         //执行一个laydate实例   初始化日期组件
         laydate.render({
             elem: '#datetools' //指定元素
             ,type: 'datetime'
             ,format: 'yyyy-MM-dd HH:mm' //可任意组合
-            ,value: new Date()
+            ,min: arrangeInitTime(30).format("yyyy-MM-dd HH:mm")
+            ,value: arrangeInitTime(30)
             ,theme:'molv'
             ,done: function (value,date,endDate) {
 
@@ -184,17 +199,22 @@ function init(){
             form.render('select', 'language'); // 动态加载的数据 要经过重新渲染 才能生效
         });
 
+        // 搜索事件
+        $("#search-button").on('click',function () {
+            search($("#movie-search-val").val());
+        });
+
+
     });
 }
 
 
 // 搜索
-function search() {
+function search(search) {
 
     //表格重载
     tableObj.reload({
         where:{
-            areaId:areaId,
             search:search
         },
         page:{

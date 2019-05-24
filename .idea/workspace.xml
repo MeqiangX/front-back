@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c31783bf-80e8-46ab-be6c-7b50583675d4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/html/task_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/modules/task_list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/arrange_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/arrange_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/arrange_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/arrange_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cinema_screen_config.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cinema_screen_config.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/movie_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/movie_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common/time.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/time.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/arrange_add.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/arrange_add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/arrange_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/arrange_edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/cinema_config.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/cinema_config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/movie_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/movie_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/order_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/order_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/order_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/order_list.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +21,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="68" column="78" lean-forward="true" selection-start-line="68" selection-start-column="78" selection-end-line="68" selection-end-column="78" />
+            <state relative-caret-position="242">
+              <caret line="93" column="20" lean-forward="true" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -45,11 +30,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task_list.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order_list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/order_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/modules/order_list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/modules/task_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="135" column="10" lean-forward="true" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
+            <state relative-caret-position="88">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -57,8 +60,8 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/common/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="155" column="48" lean-forward="true" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="48" />
+            <state relative-caret-position="3410">
+              <caret line="155" column="48" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -66,13 +69,8 @@
       <file leaf-file-name="task_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/task_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="1034">
               <caret line="47" column="65" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="65" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -80,8 +78,26 @@
       <file leaf-file-name="arrange_add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/arrange_add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="65" column="74" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="74" />
+            <state relative-caret-position="1892">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cinema_screen_config.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/cinema_screen_config.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3300">
+              <caret line="150" column="7" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cinema_config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/modules/cinema_config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1980">
+              <caret line="90" column="18" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -132,10 +148,8 @@
         <option value="$PROJECT_DIR$/html/cinema_list.html" />
         <option value="$PROJECT_DIR$/html/user_admin_list.html" />
         <option value="$PROJECT_DIR$/js/modules/user_admin_list.js" />
-        <option value="$PROJECT_DIR$/html/order_list.html" />
         <option value="$PROJECT_DIR$/html/order_info.html" />
         <option value="$PROJECT_DIR$/js/modules/order_info.js" />
-        <option value="$PROJECT_DIR$/js/modules/order_list.js" />
         <option value="$PROJECT_DIR$/js/modules/update_result.js" />
         <option value="$PROJECT_DIR$/html/self_edit.html" />
         <option value="$PROJECT_DIR$/html/self_info.html" />
@@ -165,6 +179,8 @@
         <option value="$PROJECT_DIR$/js/common/common.js" />
         <option value="$PROJECT_DIR$/html/task_list.html" />
         <option value="$PROJECT_DIR$/js/modules/task_list.js" />
+        <option value="$PROJECT_DIR$/js/modules/order_list.js" />
+        <option value="$PROJECT_DIR$/html/order_list.html" />
       </list>
     </option>
   </component>
@@ -177,9 +193,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="104" />
-    <option name="y" value="30" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="76" />
+    <option name="y" value="104" />
     <option name="width" value="1075" />
     <option name="height" value="654" />
   </component>
@@ -189,6 +205,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,7 +244,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,24 +309,28 @@
       <workItem from="1558490588894" duration="5225000" />
       <workItem from="1558495846224" duration="4443000" />
       <workItem from="1558508891344" duration="8889000" />
+      <workItem from="1558537606155" duration="1786000" />
+      <workItem from="1558579729204" duration="530000" />
+      <workItem from="1558602768784" duration="1328000" />
+      <workItem from="1558661793880" duration="4438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227749000" />
+    <option name="totallyTimeSpent" value="235831000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="76" y="104" width="1075" height="654" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21303074" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19263457" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.15930599" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.18198529" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -357,13 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="33" column="69" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/order_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -504,24 +517,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/modules/cinema_config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3102">
-          <caret line="141" column="36" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/cinema_config.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2046">
           <caret line="93" column="41" selection-start-line="93" selection-start-column="41" selection-end-line="93" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/cinema_screen_config.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2486">
-          <caret line="113" column="21" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -585,9 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1298">
           <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,13 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="206" lean-forward="true" selection-start-line="206" selection-end-line="206" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/modules/order_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="39" column="134" selection-start-line="39" selection-start-column="81" selection-end-line="39" selection-end-column="134" />
         </state>
       </provider>
     </entry>
@@ -640,36 +629,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/arrange_add.html">
+    <entry file="file://$PROJECT_DIR$/js/common/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="65" column="74" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="74" />
+        <state relative-caret-position="3410">
+          <caret line="155" column="48" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/task_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="1034">
           <caret line="47" column="65" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common/common.js">
+    <entry file="file://$PROJECT_DIR$/html/arrange_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="155" column="48" lean-forward="true" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="48" />
+        <state relative-caret-position="1892">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/cinema_screen_config.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3300">
+          <caret line="150" column="7" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/modules/cinema_config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="90" column="18" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="68" column="78" lean-forward="true" selection-start-line="68" selection-start-column="78" selection-end-line="68" selection-end-column="78" />
+        <state relative-caret-position="242">
+          <caret line="93" column="20" lean-forward="true" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -678,8 +676,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/modules/task_list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="135" column="10" lean-forward="true" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/modules/order_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/order_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
         </state>
       </provider>
     </entry>

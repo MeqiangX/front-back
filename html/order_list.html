@@ -44,9 +44,14 @@
 
 </div>
 <script type="text/html" id="barDemo">
+    {{#  if(d.status == 0 || d.status == 1){ }}
     <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
     <a id="del-button" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    {{#  } else if(d.status == 2){ }}
+    无
+    {{#  } }}
 </script>
+
 <script src="../layui/layui.js"></script>
 <script src="../js/common/common.js"></script>
 <script src="../js/modules/order_list.js"></script>

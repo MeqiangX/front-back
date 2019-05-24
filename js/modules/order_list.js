@@ -37,7 +37,13 @@ var options = {
         ,{field: 'screeningHallName', title: "放映厅", width: 200, sort: true,align:'center'}
         ,{field: 'timeScopeStart', title: '开始时间', width: 200, sort: true,align:'center'}
         ,{field: 'price', title: '支付价格', width: 200, sort: true,align:'center'}
-        ,{field: 'status', title: '支付状态', width: 200, sort: true,align:'center' ,templet: "<div>{{0 == d.status ? '未支付':'已支付'}}</div>"}
+        ,{field: 'status', title: '支付状态', width: 200, sort: true,align:'center' ,templet: "<div>{{#  if(d.status == 0){ }}\n" +
+            " 未支付\n" +
+            "{{#  } else if (d.status == 1) { }}\n" +
+            " 已支付\n" +
+            "{{#  } else { }}\n" +
+            " 已完成\n" +
+            "{{#  } }}</div>"}
         ,{field: 'seats', title: '座位', width: 200, sort: true,align:'center'}
         ,{field: 'createTime', title: '订单创建时间', width: 200, sort: true,align:'center'}
         ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:250}
@@ -114,7 +120,7 @@ function init(){
 
 
 // 搜索
-    function search(orderId,userId) {
+  function search(orderId,userId) {
 
     tableObj.reload({
         where:{

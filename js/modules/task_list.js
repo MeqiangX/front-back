@@ -122,17 +122,23 @@ function getTaskType() {
 function search(taskType) {
 
     // 搜索 点击  查看日期
+    var timeattr;
+    var start;
+    var end;
+    if (arrangeDate == null || arrangeDate == '' || arrangeDate == undefined){
+        timeattr = null;
+    }else{
+        timeattr = arrangeDate.split("T");
+        start = timeattr[0];
+        end = timeattr[1];
+    }
 
 
-    var timeattr = arrangeDate.split("T");
-
-    var start = timeattr[0];
-    var end = timeattr[1];
     tableObj.reload({
         where:{
             taskType:taskType,
-            startDate:start == undefined ? null : start.trim(),
-            endDate:end == undefined ? null : end.trim()
+            startDate:timeattr == undefined ? null : start.trim(),
+            endDate:timeattr == undefined ? null : end.trim()
         },
         page:{
             curr:1

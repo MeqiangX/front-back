@@ -269,6 +269,9 @@ function formSubmit() {
         var priceReg = /(^[-+]?[1-9]\d*(\.\d{1,2})?$)|(^[-+]?[0]{1}(\.\d{1,2})?$)/;
         if (!priceReg.test(price)) {
             layer.msg("价格必须为合法数字(正数，最多两位小数)");
+        }else if (!arrangeAvalable(dateTime,arrangeInitTime(30))){
+            // 时间和当前时间比较  要在当前时间至少向后推迟半小时
+            layer.msg("排片时间应该至少预留30分钟给用户购票");
         }else{
 
             // 价格合理 发送排片请求

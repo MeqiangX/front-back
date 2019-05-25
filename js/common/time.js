@@ -61,3 +61,36 @@ function timeclock(idDom){
 
 
 
+// 传入时间是否 是当前时间的30分钟后
+function arrangeAvalable(arrangeTime,now) {
+
+    var arrange = new Date(arrangeTime);
+    /*arrange.setMinutes (arrange.getMinutes () - 15);  // 看放映时间前15 分钟和 当前时间的比较 arrange > now 才能操作*/
+
+    var time = diffTime(now,arrange);
+    console
+        .log(arrange);
+    console
+        .log(time);
+    if (time >= 0){
+        return true;
+    }
+
+    return false;
+
+}
+
+
+
+
+function diffTime(startDate,endDate) {
+    startDate= new Date(startDate);
+    endDate = new Date(endDate);
+    console
+        .log(endDate);
+    var diff=endDate.getTime() - startDate.getTime();//时间差的毫秒数
+
+    return diff / 1000 / 60;
+}
+
+

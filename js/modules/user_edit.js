@@ -126,8 +126,8 @@ function formSubmit() {
     var pwd = $("#user-password").val();
 
     var emailResult = true;
-    var pwdResult = true;
-    var phoneResult = true;
+    var pwdResult = false;
+    var phoneResult = false;
 
     if (email != null && email != ''){
         emailResult = emailReg.test(email);

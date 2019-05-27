@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地图</title>
+    <!-- 引入jquery -->
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts.min.js"></script>
+    <script src="china.js"></script>
+</head>
+<body>
+<div id="main" style="width: 1200px;height:600px;"></div>
+</body>
+<script>
+
+
+    // 查询各个省份的影院数 订单数 交易额
+
+    var myChart = echarts.init(document.getElementById('main'));
+    function randomData() {
+        return Math.round(Math.random()*1000);
+    }
+
+    option = {
+        title: {
+            text: '全国影院情况',
+            subtext: '数据',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: function(params) {
+                var res = params.name+'<br/>';
+                var myseries = option.series;
+                for (var i = 0; i < myseries.length; i++) {
+                    for(var j=0;j<myseries[i].data.length;j++){
+                        if(myseries[i].data[j].name==params.name){
+                            res+=myseries[i].name +' : '+myseries[i].data[j].value+'</br>';
+                        }
+                    }
+                }
+                return res;
+            }
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data:['影院','订单','交易额']
+        },
+        visualMap: {
+            min: 0,
+            max: 2500,
+            left: 'left',
+            top: 'bottom',
+            text: ['高','低'],           // 文本，默认为数值文本
+            calculable: true
+        },
+        toolbox: {
+            show: true,
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+            feature: {
+                dataView: {readOnly: false},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        series: [
+            {
+                name: '影院',
+                type: 'map',
+                mapType: 'china',
+                roam: false,
+                label: {
+                    normal: {
+                        color:'rgb(0,128,70)',
+                        show: true
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:[
+                    {name: '北京',value: randomData() },
+                    {name: '天津',value: randomData() },
+                    {name: '上海',value: randomData() },
+                    {name: '重庆',value: randomData() },
+                    {name: '河北',value: randomData() },
+                    {name: '河南',value: randomData() },
+                    {name: '云南',value: randomData() },
+                    {name: '辽宁',value: randomData() },
+                    {name: '黑龙江',value: randomData() },
+                    {name: '湖南',value: randomData() },
+                    {name: '安徽',value: randomData() },
+                    {name: '山东',value: 100},
+                    {name: '新疆',value: randomData() },
+                    {name: '江苏',value: randomData() },
+                    {name: '浙江',value: randomData() },
+                    {name: '江西',value: randomData() },
+                    {name: '湖北',value: 5000 },
+                    {name: '广西',value: 5000 },
+                    {name: '甘肃',value: randomData() },
+                    {name: '山西',value: randomData() },
+                    {name: '内蒙古',value: randomData() },
+                    {name: '陕西',value: randomData() },
+                    {name: '吉林',value: randomData() },
+                    {name: '福建',value: randomData() },
+                    {name: '贵州',value: randomData() },
+                    {name: '广东',value: randomData() },
+                    {name: '青海',value: randomData() },
+                    {name: '西藏',value: randomData() },
+                    {name: '四川',value: randomData() },
+                    {name: '宁夏',value: randomData() },
+                    {name: '海南',value: randomData() },
+                    {name: '台湾',value: randomData() },
+                    {name: '香港',value: randomData() },
+                    {name: '澳门',value: randomData() }
+                ]
+            },
+            {
+                name: '订单',
+                type: 'map',
+                mapType: 'china',
+                label: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:[
+                    {name: '北京',value: randomData() },
+                    {name: '天津',value: randomData() },
+                    {name: '上海',value: randomData() },
+                    {name: '重庆',value: randomData() },
+                    {name: '河北',value: randomData() },
+                    {name: '安徽',value: randomData() },
+                    {name: '新疆',value: randomData() },
+                    {name: '浙江',value: randomData() },
+                    {name: '江西',value: randomData() },
+                    {name: '山西',value: randomData() },
+                    {name: '内蒙古',value: randomData() },
+                    {name: '吉林',value: randomData() },
+                    {name: '福建',value: randomData() },
+                    {name: '广东',value: randomData() },
+                    {name: '西藏',value: randomData() },
+                    {name: '四川',value: randomData() },
+                    {name: '宁夏',value: randomData() },
+                    {name: '香港',value: randomData() },
+                    {name: '澳门',value: randomData() }
+                ]
+            },
+            {
+                name: '交易额',
+                type: 'map',
+                mapType: 'china',
+                label: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:[
+                    {name: '北京',value: randomData() },
+                    {name: '天津',value: randomData() },
+                    {name: '上海',value: randomData() },
+                    {name: '广东',value: randomData() },
+                    {name: '台湾',value: randomData() },
+                    {name: '香港',value: randomData() },
+                    {name: '澳门',value: randomData() }
+                ]
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+</script>
+</html>

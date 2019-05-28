@@ -23,47 +23,49 @@ layui.use(['jquery','element','layer'], function(){
         if (layId != undefined){
             var str = new String();
             if (layId == 1){
-                str = "<iframe src=\"cinema_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"cinema_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 2){
-                str = " <iframe src=\"cinema_screen_config.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = " <iframe src=\"cinema_screen_config.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 3){
-                str = "<iframe src=\"cinema_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"cinema_edit.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 4){
-                str = "<iframe src=\"screen_hall_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"screen_hall_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 5){
-                str = "<iframe src=\"screen_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"screen_edit.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 6){
-                str = "<iframe src=\"arrange_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"arrange_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 7){
-                str = "<iframe src=\"arrange_add.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"arrange_add.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 8){
-                str = "<iframe src=\"movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"movie_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 9){
-                str = "<iframe src=\"hot_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"hot_movie_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 10){
-                str = "<iframe src=\"new_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"new_movie_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 11){
-                str = "<iframe src=\"north_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"north_movie_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 12){
-                str = "<iframe src=\"week_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"week_movie_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 13){
-                str = "<iframe src=\"comming_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"comming_movie_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 14){
-                str = "<iframe src=\"top100_movie_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"top100_movie_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 15){
-                str = "<iframe src=\"user_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"user_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 16){
-                str = "<iframe src=\"user_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"user_edit.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 17){
-                str = "<iframe src=\"order_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"order_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 18){
-                str = "<iframe src=\"user_admin_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"user_admin_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 19){
-                str = "<iframe src=\"user_admin_edit.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"user_admin_edit.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 20){
-                str = "<iframe src=\"self_info.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"self_info.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }else if (layId == 21){
-                str = "<iframe src=\"task_list.html\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                str = "<iframe src=\"task_list.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+            }else if (layId == 22){
+                str = "<iframe src=\"analysis.html\" data-frameid=\""+  layId +"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
             }
 
             navToTab($(elem).attr("lay-id"),$(elem).text(),str);
@@ -105,6 +107,8 @@ function navToTab(layId,title,content) {
 
         // 切换
         element.tabChange('tab-nav',layId);
+        // 切换后刷新框架
+        $("iframe[data-frameid='" + layId + "']").attr("src", $("iframe[data-frameid='" + layId + "']").attr("src"))//切换后刷新框架
 
 
 }

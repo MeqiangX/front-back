@@ -11,7 +11,7 @@ var tableObj;
 
 var options = {
     elem: '#order-table'
-    ,width:1300
+    ,width: 1400
     ,url: 'http://localhost:8082/api/portal/order/user-orders'//数据接口
     ,method:'post'
     , request:{
@@ -29,22 +29,22 @@ var options = {
     }
     ,page: true //开启分页
     ,cols: [[ //表头
-        {field: 'orderId', title: '订单号',width:100,sort: true,align:'center'}
+        {field: 'orderId', title: '订单号',width:200,sort: true,align:'center'}
         /*  ,{field: 'image', align:'center',title: '图片', width: 135,height:40,templet:'<div><img src="{{ d.image}}"></div>',style:'height:48px;width:48px;line-height:48px!important;'}*/
-        ,{field: 'userId', align:'center',title: '用户id', width:150}
+        ,{field: 'userId', align:'center',title: '用户id', sort: true,width:150}
         ,{field: 'movieName', align:'center',title: '电影', width: 180}
         ,{field: 'cinemaName', align:'center',title: '影院', width: 220}
-        ,{field: 'screeningHallName', title: "放映厅", width: 200, sort: true,align:'center'}
+        ,{field: 'screeningHallName', title: "放映厅", width: 200,align:'center'}
         ,{field: 'timeScopeStart', title: '开始时间', width: 200, sort: true,align:'center'}
         ,{field: 'price', title: '支付价格', width: 200, sort: true,align:'center'}
-        ,{field: 'status', title: '支付状态', width: 200, sort: true,align:'center' ,templet: "<div>{{#  if(d.status == 0){ }}\n" +
+        ,{field: 'status', title: '支付状态', width: 200,align:'center' ,templet: "<div>{{#  if(d.status == 0){ }}\n" +
             " 未支付\n" +
             "{{#  } else if (d.status == 1) { }}\n" +
             " 已支付\n" +
             "{{#  } else { }}\n" +
             " 已完成\n" +
             "{{#  } }}</div>"}
-        ,{field: 'seats', title: '座位', width: 200, sort: true,align:'center'}
+        ,{field: 'seats', title: '座位', width: 200,align:'center'}
         ,{field: 'createTime', title: '订单创建时间', width: 200, sort: true,align:'center'}
         ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:250}
     ]]

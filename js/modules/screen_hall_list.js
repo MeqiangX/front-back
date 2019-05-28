@@ -11,7 +11,7 @@ var tableObj;
 
 var options = {
     elem: '#screen-table'
-    ,width:1300
+    ,width: 1400
     ,url: 'http://localhost:8080/api/backend/screen/query-screens-page'//数据接口
     ,method:'get'
     , request:{
@@ -72,7 +72,7 @@ function init(){
                     area: ['700px', '400px'],
                     content: 'screen_info.html?id='+data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
                 });
-                layer.msg('ID：'+ data.id + ' 的查看操作');
+               // layer.msg('ID：'+ data.id + ' 的查看操作');
             } else if(obj.event === 'del'){
                 // 删除操作  判断是否排片
                 layer.confirm('真的删除行么', function(index){

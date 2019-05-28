@@ -11,7 +11,7 @@ var tableObj;
 
 var options = {
     elem: '#cinema-table'
-    ,width:1300
+    ,width: 1500
     ,url: 'http://localhost:8080/api/backend/cinema/find-cinema-by-areaId'//数据接口
     ,method:'get'
     , request:{
@@ -105,14 +105,11 @@ function init(){
                     area: ['900px', '500px'],
                     content: 'cinema_info.html?id='+data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
                 });
-                layer.msg('ID：'+ data.id + ' 的查看操作');
+                //layer.msg('ID：'+ data.id + ' 的查看操作');
             } else if(obj.event === 'del'){
 
                 // 删除操作
-                layer.confirm('真的删除行么', function(index){
-
-
-
+                layer.confirm('确定删除该条记录吗？操作不可回退', function(index){
                     // 需要执行的请求
                     var result;
                     $.ajax({

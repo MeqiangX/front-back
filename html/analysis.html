@@ -6,26 +6,23 @@
     <!-- 引入jquery -->
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts.min.js"></script>
-    <script src="china.js"></script>
+    <script src="../js/echarts/china.js"></script>
 </head>
 <body>
 <div id="main" style="width: 1200px;height:600px;"></div>
+<div id="histo" style="width: 800px;height:400px;"></div>
 </body>
 <script>
-
 
     // 查询各个省份的影院数 订单数 交易额
     var result = getData();  // 0 是影院数  1  是订单数 2 是交易额
     console.log(result);
     var myChart = echarts.init(document.getElementById('main'));
-    function randomData() {
-        return Math.round(Math.random()*1000);
-    }
 
     option = {
         title: {
             text: '全国影院情况',
-            subtext: '数据',
+            subtext: '统计数据',
             left: 'center'
         },
         tooltip: {
@@ -190,6 +187,170 @@
             type:"get",
             async:false,
             url:"http://localhost:8080/api/backend/cinema/maps-data",
+            success:function (data,status) {
+                if (data.success == true){
+                    result = data.data;
+                }else{
+                    result = data.message;
+                }
+            }
+        });
+        return result;
+    }
+
+
+
+
+    // ------ 柱状图
+
+
+
+
+    // 三个数据集 一个是X轴的坐标 一个是X轴坐标数据集  一个是饼图数据集
+    var histoResult = getHistoData();
+    var myHistoChart = echarts.init(document.getElementById('histo'));
+    var prodCode = ['交易额'];
+    var prodCodeX = prodCode.map(function(str) {
+        return str + ' ';
+    });
+    /*var timeData = ['xxx影院', 'xxx影院', 'xxx影院', 'xxx影院', 'xxx影院', 'xxx影院','xxx影院','xxx影院','xxx影院','xxx影院'];*/
+    // 坐标
+    var timeData = histoResult.timeNames;
+    var histogramData = histoResult.histogramMap;
+    var pieData = histoResult.paneMap;
+    /* var pieData = [{
+         value: 335,
+         name: '当天受理'
+     }, {
+         value: 310,
+         name: '一天受理'
+     }, {
+         value: 234,
+         name: '两天受理'
+     }, {
+         value: 135,
+         name: '三天受理'
+     }, {
+         value: 1548,
+         name: '五天受理'
+     }, {
+         value: 800,
+         name: '五天以上受理'
+     },{
+         value: 335,
+         name: '当天受理'
+     }, {
+         value: 310,
+         name: '一天受理'
+     }, {
+         value: 234,
+         name: '两天受理'
+     }, {
+         value: 135,
+         name: '三天受理'
+     }];*/
+
+    pieData = pieData.map(function(data) {
+        data.name = data.name + ' ';
+        return data;
+    });
+    var barData = [{
+        name: '影院交易额',
+        type: 'bar',
+        /*data: [125, 20, 9, 1, 1, 2, 2,6,14,67]*/
+        data: histogramData,
+        barWidth:'20',              //---柱形宽度
+        barCategoryGap:'5%',       //---柱形间距
+    }];
+    histoOption = {
+        title: {
+            text: '截止到目前的前十交易额的影院和影院省份占比',
+            x: 'center',
+            y:'top',
+            show: true,
+            left: '1%',
+            textStyle: {
+                color: '#000'
+            }
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: [{
+            orient: 'vertical',
+            right: '5%',
+            itemWidth: 9,
+            itemHeight: 8,
+            data: prodCodeX
+        }, {
+            show: false,
+            orient: 'horizontal',
+            bottom: '0%',
+            right: '5%',
+            itemWidth: 9,
+            itemHeight: 8,
+            data: prodCode
+        }],
+        grid: [{
+            bottom: '5%',
+            right: '8%',
+            left: '8%'
+        }],
+        xAxis: [{
+            gridIndex: 0,
+            type: 'category',
+            data: timeData,
+            axisTick: {
+                alignWithLabel: true
+            }
+        }],
+        yAxis: [{
+            gridIndex: 0,
+            type: 'value'
+        }],
+        series: [{
+            name: '影院省份占比',
+            type: 'pie',
+            radius: '35%',
+            center: ['75%', '25%'],
+            data: pieData,
+            label: {
+                normal: {
+                    show: true,
+                    position: 'outside'
+                },
+                emphasis: {
+                    show: false
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            },
+            tooltip: {
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+        }]
+    }
+    for (var i = 0; i < barData.length; i++) {
+        histoOption.series.push(barData[i]);
+    }
+    myHistoChart.setOption(histoOption);
+
+    function getHistoData(){
+        var result;
+        $.ajax({
+            type:"get",
+            async:false,
+            url:"http://localhost:8080/api/backend/cinema/percent",
             success:function (data,status) {
                 if (data.success == true){
                     result = data.data;

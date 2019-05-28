@@ -11,7 +11,7 @@ var currentCinemaId;
 
 var options = {
     elem: '#cinema-table'
-    ,width:1300
+    ,width: 1400
     ,url: 'http://localhost:8080/api/backend/cinema/find-cinema-by-areaId'//数据接口
     ,method:'get'
     , request:{
@@ -38,9 +38,9 @@ var options = {
         /*  ,{field: 'image', align:'center',title: '图片', width: 135,height:40,templet:'<div><img src="{{ d.image}}"></div>',style:'height:48px;width:48px;line-height:48px!important;'}*/
         ,{field: 'cinemaName', align:'center',title: '影院名', width:150}
         ,{field: 'phone', align:'center',title: '联系方式', width: 180}
-        ,{field: 'cinemaAreaId', align:'center',title: '地区ID', width:80, sort: true}
+        ,{field: 'cinemaAreaId', align:'center',title: '地区ID', width:150, sort: true}
         ,{field: 'cinemaAreaFullName', align:'center',title: '所在区域', width:180}
-        ,{field: 'cinemaFullAddress', align:'center',title: '地址', width: 220}
+        ,{field: 'cinemaFullAddress', align:'center',title: '地址', width: 280}
         ,{field: 'createTime', title: '创建时间', width: 200, sort: true,align:'center'}
         ,{field: 'updateTime', title: '跟新时间', width: 200, sort: true,align:'center'}
     ]]

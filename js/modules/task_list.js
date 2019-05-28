@@ -13,7 +13,7 @@ var arrangeDate;
 
 var options = {
     elem: '#task-table'
-    ,width:1300
+    ,width: 1400
     ,url: 'http://localhost:8080/api/backend/taskmanage/task-records'//数据接口
     ,method:'get'
     , request:{
@@ -35,7 +35,7 @@ var options = {
     }*/
     ,page: true //开启分页
     ,cols: [[ //表头
-        {field: 'id', title: 'ID',width:40,sort: true,align:'center'}
+        {field: 'id', title: 'ID',width:80,sort: true,align:'center'}
         /*  ,{field: 'image', align:'center',title: '图片', width: 135,height:40,templet:'<div><img src="{{ d.image}}"></div>',style:'height:48px;width:48px;line-height:48px!important;'}*/
         ,{field: 'taskName', align:'center',title: '执行任务', width:150}
         ,{field: 'spendTime', align:'center',title: '耗时/ms', sort: true,width: 180}

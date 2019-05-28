@@ -52,8 +52,9 @@ function init() {
     }
 
 
+    // --- 最近一年的数据
     //得到最近一年的年份月份
-    var lastYearList = lastYear();
+   /* var lastYearList = lastYear();
 
     var startYear = lastYearList[0].substr(0,4);
     var startMonth = parseInt(lastYearList[0].substr(4,2));
@@ -71,8 +72,21 @@ function init() {
     var userYearData = lastYearData(2,startYear,startMonth,endYear,endMonth);
 
     // 订单
-    var orderYearData = lastYearData(3,startYear,startMonth,endYear,endMonth);
+    var orderYearData = lastYearData(3,startYear,startMonth,endYear,endMonth);*/
 
+
+
+   //  最近三十天的数据
+    var startDate = new Date((new Date().getTime()-1000*60*60*24*29));  //29
+    startDate=dateFormat(startDate);
+
+    var endDate = new Date((new Date().getTime()));  //now
+    endDate=dateFormat(endDate);
+
+    var movieYearData = last30DData(0,startDate,endDate);
+    var cinemaYearData = last30DData(1,startDate,endDate);
+    var userYearData = last30DData(2,startDate,endDate);
+    var orderYearData = last30DData(3,startDate,endDate);
     // 转换成 key 数组 和 value 数组
 
     var dateArray = new Array();
@@ -120,7 +134,7 @@ function init() {
     // 指定图表的配置项和数据
     var option = {
         title: {
-            text: '最近一年电影数变化折线图'
+            text: '最近30天电影数变化折线图'
         },
         tooltip : {
             trigger: 'axis',
@@ -172,7 +186,7 @@ function init() {
     // 指定图表的配置项和数据  影院数据
     var cinemaOption = {
         title: {
-            text: '最近一年影院数变化折线图'
+            text: '最近30天影院数变化折线图'
         },
         tooltip : {
             trigger: 'axis',
@@ -223,7 +237,7 @@ function init() {
     // 指定图表的配置项和数据  用户数据
     var userOption = {
         title: {
-            text: '最近一年用户数变化折线图'
+            text: '最近30天用户数变化折线图'
         },
         tooltip : {
             trigger: 'axis',
@@ -275,7 +289,7 @@ function init() {
     // 指定图表的配置项和数据  订单数据
     var orderOption = {
         title: {
-            text: '最近一年订单数变化折线图'
+            text: '最近30天订单数变化折线图'
         },
         tooltip : {
             trigger: 'axis',
@@ -371,3 +385,24 @@ function lastYearData(option,startYear,startMonth,endYear,endMonth) {
     return result;
 }
 
+
+// 最近三十天的数据
+function last30DData(option,startDate,endDate) {
+
+    var result;
+    $.ajax({
+        type:"get",
+        async:false,
+        url:"http://localhost:8080/api/backend/welcome/echarts-option",
+        data:{
+            option:option,
+            startDate:startDate,
+            endDate:endDate
+        },
+        success:function (data,status) {
+            if (data.success === true)
+                result = data.data;
+        }
+    });
+    return result;
+}

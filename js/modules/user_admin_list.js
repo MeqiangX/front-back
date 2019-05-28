@@ -37,7 +37,7 @@ var options = {
         /*  ,{field: 'image', align:'center',title: '图片', width: 135,height:40,templet:'<div><img src="{{ d.image}}"></div>',style:'height:48px;width:48px;line-height:48px!important;'}*/
         ,{field: 'userName', align:'center',title: '管理员账号', width:150}
         ,{field: 'userPassword', align:'center',title: '管理员密码', width: 180}
-        ,{field: 'status', align:'center',title: '状态', width: 220}
+        ,{field: 'status', align:'center',title: '状态', width: 220,templet: "<div>{{0 == d.status ? '正常':'冻结'}}</div>"}
         ,{field: 'creator', title: '创建人', width: 200, sort: true,align:'center'}
         ,{field: 'updator', title: '跟新人', width: 200, sort: true,align:'center'}
         ,{field: 'createTime', title: '创建时间', width: 200, sort: true,align:'center'}

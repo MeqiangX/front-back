@@ -13,7 +13,7 @@ var movieId;
 
 var options = {
     elem: '#movie-table'
-    ,width:1280
+    ,width: 1400
     ,url: 'http://localhost:8082/api/portal/movie/search-movies'//数据接口
     ,method:'get'
     , request:{

@@ -13,7 +13,7 @@ var arrangeDate;
 
 var options = {
     elem: '#arrange-table'
-    ,width:1300
+    ,width: 1400
     ,url: 'http://localhost:8080/api/backend/cinema/arrange-records'//数据接口
     ,method:'get'
     , request:{

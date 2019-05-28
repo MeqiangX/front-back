@@ -11,7 +11,7 @@ var tableObj;
 
 var options = {
     elem: '#movie-table'
-    ,width:1300
+    ,width:1400
     ,url: 'http://localhost:8082/api/portal/movie/movie-rank'//数据接口
     ,method:'get'
     , request:{
@@ -33,19 +33,19 @@ var options = {
     ,page: true //开启分页
     ,cols: [[ //表头
         {type:"numbers",title: '排名',width:100,sort: true,align:'center'}
-        ,{field: 'movieId', title: 'movieId',width:100,sort: true,align:'center'}
+        ,{field: 'movieId', title: 'movieId',width:100,align:'center'}
         /*  ,{field: 'image', align:'center',title: '图片', width: 135,height:40,templet:'<div><img src="{{ d.image}}"></div>',style:'height:48px;width:48px;line-height:48px!important;'}*/
         ,{field: 'movieName', align:'center',title: '电影名', width:150}
         ,{field: 'originalName', align:'center',title: '原名', width: 180}
-        ,{field: 'genres', align:'center',title: '类别', width:80, sort: true}
-        ,{field: 'rating', align:'center',title: '评分', width:180}
-        ,{field: 'ratingsCount', align:'center',title: '评分人数', width: 220}
+        ,{field: 'genres', align:'center',title: '类别', width:180}
+        ,{field: 'rating', align:'center',title: '评分', width:80}
+        ,{field: 'ratingsCount', align:'center',title: '评分人数', sort: true,width: 220}
         ,{field: 'year', title: '上映年份', width: 200, sort: true,align:'center'}
-        ,{field: 'countries', title: '上映国家', width: 200, sort: true,align:'center'}
+        ,{field: 'countries', title: '上映国家', width: 200,align:'center'}
         ,{field: 'pubdates', title: '上映时间', width: 200, sort: true,align:'center'}
-        ,{field: 'languages', title: '语言', width: 200, sort: true,align:'center'}
-        ,{field: 'tags', title: '标签', width: 200, sort: true,align:'center'}
-        ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:120}
+        ,{field: 'languages', title: '语言', width: 200, align:'center'}
+        ,{field: 'tags', title: '标签', width: 200, align:'center'}
+        ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:80}
     ]]
 };
 

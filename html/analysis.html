@@ -9,8 +9,8 @@
     <script src="../js/echarts/china.js"></script>
 </head>
 <body>
-<div id="main" style="width: 1200px;height:600px;"></div>
-<div id="histo" style="width: 800px;height:400px;"></div>
+<div id="main" style="width: 1200px;height:600px;left:210px"></div>
+<div id="histo" style="width: 800px;height:400px;left:300px;top:20px"></div>
 </body>
 <script>
 
@@ -47,7 +47,7 @@
         },
         visualMap: {
             min: 0,
-            max: 2500,
+            max: 500,
             left: 'left',
             top: 'bottom',
             text: ['高','低'],           // 文本，默认为数值文本
@@ -260,7 +260,7 @@
         /*data: [125, 20, 9, 1, 1, 2, 2,6,14,67]*/
         data: histogramData,
         barWidth:'20',              //---柱形宽度
-        barCategoryGap:'5%',       //---柱形间距
+        barCategoryGap:'20',       //---柱形间距
     }];
     histoOption = {
         title: {

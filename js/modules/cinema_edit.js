@@ -173,6 +173,9 @@ function init() {
 // 提交修改
 function formSubmit() {
 
+
+
+
     var result = submitUpdate();
     var cinemaId = $("#cinema-id").val();
     console.log("id ; "+cinemaId);
@@ -212,21 +215,32 @@ function submitUpdate() {
 
     var result;
 
-    $.ajax({
-        type:"post",
-        async:false,
-        url:"http://localhost:8080/api/backend/cinema/cinema-add",
-        dataType:"json",
-        contentType:"application/json",
-        data: JSON.stringify(cinemaAddPo),
-        success:function (data,status) {
-            if (data.success == true){
-                result = true;
-            }else{
-                result = data.message;
+    //验证
+    if (cinemaAddPo.cinemaName == undefined || cinemaAddPo.cinemaName == null || cinemaAddPo.cinemaName.trim() == ''){
+        result = "影院名称不能为空";
+    }else if (cinemaAddPo.phone == undefined || cinemaAddPo.phone == null || cinemaAddPo.phone.trim() == ''){
+        result = "影院联系方式不能为空";
+    }else if  (cinemaAddPo.areaId == undefined || cinemaAddPo.areaId == null || cinemaAddPo.areaId.trim() == ''){
+        result = "影院地区不能为空";
+    }else if  (cinemaAddPo.cinemaFullAddress == undefined || cinemaAddPo.cinemaFullAddress == null || cinemaAddPo.cinemaFullAddress.trim() == ''){
+        result = "影院地址不能为空";
+    }else{
+        $.ajax({
+            type:"post",
+            async:false,
+            url:"http://localhost:8080/api/backend/cinema/cinema-add",
+            dataType:"json",
+            contentType:"application/json",
+            data: JSON.stringify(cinemaAddPo),
+            success:function (data,status) {
+                if (data.success == true){
+                    result = true;
+                }else{
+                    result = data.message;
+                }
             }
-        }
-    });
+        });
+    }
 
     return result;
 }
